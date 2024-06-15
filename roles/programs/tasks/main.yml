@@ -1,0 +1,5 @@
+---
+ - name: Install programs
+   ansible.builtin.package:
+      name: "{{ packages_list }}"
+      state: present

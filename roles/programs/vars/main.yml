@@ -1,0 +1,10 @@
+# Add to this as time goes on
+# AUR with Ubuntu stuff ?
+packages_list :
+  - git
+  - i3
+  - neovim
+  - kitty
+  - tmux
+  - gcc
+  - python
