@@ -4,8 +4,7 @@ printf "Linux setup\n \n"
 echo "Installing git, ansible and updating"
  if [ -x "$(command -v apt)" ]; then
      sudo apt upgrade 
-     sudo apt install -y git ansible
-
+     sudo apt install -y --needed git ansible
  elif [ -x "$(command -v pacman)" ]; then
      sudo pacman -Syu --noconfirm
      sudo pacman -S --noconfirm git ansible
