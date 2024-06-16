@@ -6,18 +6,14 @@
    tags: initial
    register: cloned
 
- - name: Stow dotfiles
+ - name: Inital dotfiles
+   # Sets up the links with --adopt, then changes with git restore, so all ends up identical to git
    shell: |
     cd ~/dotfiles
     git pull
-    stow .
-   tags: update
-
- - name: Inital dotfiles
-   # Sets up the links with --adopt, then changes with git restore.
-   shell: |
-    cd ~/dotfiles
-    stow --adopt *
+    stow --adopt .
     git restore .
-   tags: initial
+   tags: 
+    - update
+    - initial
    when: cloned
