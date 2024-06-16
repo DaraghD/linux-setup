@@ -16,4 +16,4 @@
    tags: 
     - update
     - initial
-   when: cloned
+   when: cloned.changed
