@@ -8,4 +8,4 @@ packages_list :
   - tmux
   - gcc
   - python3
-  - discord
+  - openssh

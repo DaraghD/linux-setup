@@ -9,3 +9,4 @@
   roles: 
     - setup
     - update
+  tags: update

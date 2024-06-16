@@ -6,6 +6,3 @@
     git pull
     stow --adopt .
     git restore .
-   tags: 
-    - update
-    - initial
