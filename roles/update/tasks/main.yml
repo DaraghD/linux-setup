@@ -1,12 +1,5 @@
 --- 
- - name: Clone dotfiles to home directory
-   ansible.builtin.git:
-    repo: "{{ dotfiles_repo }}"
-    dest: "~/dotfiles"
-   tags: initial
-   register: cloned
-
- - name: Inital dotfiles
+ - name: Update dotfiles
    # Sets up the links with --adopt, then changes with git restore, so all ends up identical to git
    shell: |
     cd ~/dotfiles
@@ -16,4 +9,3 @@
    tags: 
     - update
     - initial
-   when: cloned.changed

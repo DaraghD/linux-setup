@@ -2,5 +2,6 @@
 - hosts: localhost
   become: yes
   roles:
+    - setup 
+    - update
     - programs
-    - dotfiles
