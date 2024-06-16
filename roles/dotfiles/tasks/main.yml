@@ -3,10 +3,21 @@
    ansible.builtin.git:
     repo: "{{ dotfiles_repo }}"
     dest: "~/dotfiles"
+   tags: initial
+   register: cloned
 
  - name: Stow dotfiles
    shell: |
     cd ~/dotfiles
     git pull
     stow .
+   tags: update
 
+ - name: Inital dotfiles
+   # Sets up the links with --adopt, then changes with git restore.
+   shell: |
+    cd ~/dotfiles
+    stow --adopt *
+    git restore .
+   tags: initial
+   when: cloned
