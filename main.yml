@@ -2,6 +2,10 @@
 - hosts: localhost
   become: yes
   roles:
-    - setup 
-    - update
     - programs
+
+- hosts: localhost
+  become: no
+  roles: 
+    - setup
+    - update
